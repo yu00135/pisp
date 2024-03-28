@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<p>这封邮件是由[个人信息托管平台]发送的。</p><br/>
+<p>您收到这封邮件是由于在[个人信息托管平台]进行某些操作时需要验证，如果不是您本人操作请无视这封邮件。</p><br/>
+<p>请将下面的验证码输入到提示框即可:  </p>
+<div style="color: red"><h3 th:text="${emailCode}">emailCode</h3></div>
+</body>
+</html>

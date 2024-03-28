@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mmy.pisp.mapper.FilesMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.mmy.pisp.entity.Files">
+        <id column="file_id" property="fileId" />
+        <result column="file_type" property="fileType" />
+        <result column="file_name" property="fileName" />
+        <result column="file_uuid" property="fileUuid" />
+        <result column="file_size" property="fileSize" />
+        <result column="file_md5" property="fileMd5" />
+        <result column="file_count" property="fileCount" />
+        <result column="file_time" property="fileTime" />
+        <result column="parent_id" property="parentId" />
+        <result column="user_id" property="userId" />
+    </resultMap>
+
+    <select id="getChildList" resultMap="BaseResultMap">
+        select * from files where find_in_set(${paramName}, getChildList(#{fileId})) and user_id=#{userId};
+    </select>
+
+</mapper>

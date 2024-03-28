@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mmy.pisp.mapper.SitesMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.mmy.pisp.entity.Sites">
+        <id column="site_id" property="siteId" />
+        <result column="site_name" property="siteName" />
+        <result column="site_url" property="siteUrl" />
+        <result column="site_description" property="siteDescription" />
+        <result column="site_account" property="siteAccount"/>
+        <result column="site_password" property="sitePassword"/>
+        <result column="user_id" property="userId" />
+    </resultMap>
+
+</mapper>
